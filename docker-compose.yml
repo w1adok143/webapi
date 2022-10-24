@@ -1,0 +1,30 @@
+version: "3.9"
+services:
+  webapi:
+    build:
+      context: .
+      dockerfile: ./docker/node/Dockerfile
+    image: node
+    restart: unless-stopped
+    ports:
+      - 3000:3000
+    depends_on:
+      - db
+    stdin_open: true
+    tty: true
+
+  db:
+    image: mariadb
+    restart: always
+    container_name: db
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: webapi
+
+  phpmyadmin:
+    image: phpmyadmin
+    restart: always
+    ports:
+      - 3306:80
+    environment:
+      - PMA_ARBITRARY=1

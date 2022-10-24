@@ -1,0 +1,50 @@
+{
+    "compilerOptions": {
+        /* Type Checking */
+        "strict": true,
+        "noImplicitAny": true,
+        "strictNullChecks": false,
+        "strictPropertyInitialization": false,
+        "noImplicitThis": false,
+        "useUnknownInCatchVariables": false,
+        "alwaysStrict": true,
+
+        /* Modules */
+        "module": "commonjs",
+        "moduleResolution": "node",
+        "baseUrl": "./",
+        "paths": {
+            "@/*": ["./src/backend/*"]
+        },
+        "types": [
+            "node"
+        ],
+        "resolveJsonModule": true,
+
+        /* Emit */
+        "sourceMap": false,
+
+        /* Interop Constraints */
+        "allowSyntheticDefaultImports": true,
+        "esModuleInterop": true,
+        "forceConsistentCasingInFileNames": true,
+
+        /* Backwards Compatibility */
+        "suppressImplicitAnyIndexErrors": true,
+
+        /* Language and Environment */
+        "target": "esnext",
+        "experimentalDecorators": true,
+        "emitDecoratorMetadata": true,
+        "lib": ["esnext", "dom"],
+
+        /* Completeness */
+        "skipLibCheck": true
+    },
+    "include": [
+        "src/**/*.ts"
+    ],
+    "exclude": [
+        "node_modules"
+    ]
+}
